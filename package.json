@@ -1,0 +1,55 @@
+{
+  "name": "md-extensibility",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "dependencies": {
+    "@sap/cds": "^9.4.4",
+    "@sap/cds-mtxs": "^3.4.3",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "private": true,
+  "cap": {
+    "features": {
+      "mtx": true
+    }
+  },
+  "cds": {
+    "requires": {
+      "multitenancy": true,
+      "extensibility": true,
+      "cds.xt.ExtensibilityService": {
+        "element-prefix": [
+          "z_"
+        ],
+        "extension-allowlist": [
+          {
+            "for": [
+              "sap.cim.masterdata.CompanyCode"
+            ],
+            "kind": "entity",
+            "new-fields": 2
+          },
+          {
+            "for": [
+              "MasterDataService"
+            ],
+            "new-entities": 2
+          }
+        ]
+      },
+      "[production]": {
+        "multitenancy": true
+      },
+      "[with-mtx]": {
+        "multitenancy": true
+      }
+    },
+    "profile": "with-mtx-sidecar"
+  }
+}
