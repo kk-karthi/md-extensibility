@@ -1,4 +1,4 @@
-using sap.cim.masterdata as masterdata from '../db/schema';
+using my.sample.masterdata as masterdata from '../db/schema';
 
 @path: '/masterdata'
 service MasterDataService {

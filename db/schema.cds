@@ -1,4 +1,4 @@
-namespace sap.cim.masterdata;
+namespace my.sample.masterdata;
 
 entity CompanyCode {
   key ID : UUID;

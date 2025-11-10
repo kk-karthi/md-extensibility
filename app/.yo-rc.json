@@ -1,0 +1,19 @@
+{
+  "generator-ui5-app": {
+    "namespace": "my.sample.app",
+    "framework": "OpenUI5",
+    "frameworkVersion": "1.142.0",
+    "author": "Karthikeyan Kanagaraj",
+    "initrepo": false,
+    "appId": "my.sample.app",
+    "appURI": "my/sample/app",
+    "cdnDomain": "sdk.openui5.org",
+    "defaultTheme": "sap_horizon",
+    "qunitCoverageFile": "qunit-coverage-istanbul.js",
+    "gte1_98_0": true,
+    "gte1_104_0": true,
+    "gte1_120_0": true,
+    "lt1_124_0": false,
+    "setupCompleted": true
+  }
+}

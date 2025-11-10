@@ -1,0 +1,30 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Dialog title="{i18n>appTitle}" contentWidth="400px">
+        <content>
+            <VBox class="sapUiMediumMargin">
+                <Label text="{i18n>code}" required="true"/>
+                <Input id="codeInput" required="true"/>
+                
+                <Label text="{i18n>name}" required="true"/>
+                <Input id="nameInput" required="true"/>
+                
+                <Label text="{i18n>country}"/>
+                <Input id="countryInput" />
+                
+                <Label text="{i18n>currency}"/>
+                <Input id="currencyInput" />
+                
+                <Label text="{i18n>language}"/>
+                <Input id="languageInput" />
+            </VBox>
+        </content>
+        
+        <buttons>
+            <Button text="Save" type="Emphasized" press="onDialogSave"/>
+            <Button text="Cancel" press="onDialogCancel"/>
+        </buttons>
+    </Dialog>
+</core:FragmentDefinition>

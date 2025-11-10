@@ -1,0 +1,69 @@
+<mvc:View
+	controllerName="my.sample.app.controller.Main"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	core:require="{
+		formatter: 'my/sample/app/model/formatter'
+	}">
+
+	<Page
+		title="{i18n>appTitle}"
+		id="page">
+		<VBox class="sapUiMediumMargin">
+                <!-- Toolbar with Create button -->
+                <Toolbar>
+                    <Title text="{i18n>appTitle}" level="H2"/>
+                    <ToolbarSpacer/>
+                    <Button id="createButton" text="{i18n>createButtonText}" type="Emphasized" press="onCreatePress"/>
+                </Toolbar>
+                
+                <!-- Table for displaying company codes -->
+                <Table id="companyCodeTable" 
+                       items="{/CompanyCodes}"
+                       mode="SingleSelect"
+                       selectionChange="onSelectionChange">
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="Items ({/CompanyCodes/@odata.count})"/>
+                            <ToolbarSpacer/>
+                            <Button text="Edit" enabled="{viewModel>/editEnabled}" press="onEditPress"/>
+                            <Button text="Delete" enabled="{viewModel>/deleteEnabled}" press="onDeletePress" type="Reject"/>
+                        </Toolbar>
+                    </headerToolbar>
+                    
+                    <columns>
+                        <Column>
+                            <Text text="{i18n>code}"/>
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>name}"/>
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>country}"/>
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>currency}"/>
+                        </Column>
+                        <Column>
+                            <Text text="{i18n>language}"/>
+                        </Column>
+                    </columns>
+                    
+                    <items>
+                        <ColumnListItem press="onItemPress">
+                            <cells>
+                                <Text text="{code}"/>
+                                <Text text="{name}"/>
+                                <Text text="{country}"/>
+                                <Text text="{currency}"/>
+                                <Text text="{language}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </VBox>
+	</Page>
+
+</mvc:View>

@@ -23,6 +23,7 @@
     "requires": {
       "multitenancy": true,
       "extensibility": true,
+      "html5-repo": true,
       "cds.xt.ExtensibilityService": {
         "element-prefix": [
           "z_"
@@ -30,7 +31,7 @@
         "extension-allowlist": [
           {
             "for": [
-              "sap.cim.masterdata.CompanyCode"
+              "my.sample.masterdata.CompanyCode"
             ],
             "kind": "entity",
             "new-fields": 2
@@ -48,6 +49,9 @@
       },
       "[with-mtx]": {
         "multitenancy": true
+      },
+       "folders": {
+      "app": "./app/dist"
       }
     },
     "profile": "with-mtx-sidecar"
